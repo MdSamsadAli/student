@@ -1,0 +1,36 @@
+﻿@model List<collegeManagement.Models.tbl_Student>
+@{
+	ViewBag.Title = "Index";
+}
+
+<h2>Student List</h2>
+<table width="100%" class="tabel table-hover table-bordered">
+	<tr class="bg-info">
+		<th>SNo</th>
+		<th>Name</th>
+		<th>Address</th>
+		<th>Contact</th>
+		<th>Email</th>
+		<th>Action</th>
+	</tr>
+	@{ int sn = 1;}
+	@foreach (var data in Model)
+	{
+		<tr>
+			<td>@(sn++)</td>
+			<td>@data.Name</td>
+			<td>@data.Address</td>
+			<td>@data.Contact</td>
+			<td>@data.Email</td>
+			<td>
+				<a class="btn btn-info" href="@Url.Action("Edit", new{ id = data.id})">Edit</a>
+				<a class="btn btn-danger" href="@Url.Action("Delete", new{ id = data.id})">Delete</a>
+			</td>
+		</tr>
+	}
+
+</table>
+<br />
+<a class="navbar-link btn btn-primary" href="@Url.Action("AddNew")">Add New Student</a>
+
+

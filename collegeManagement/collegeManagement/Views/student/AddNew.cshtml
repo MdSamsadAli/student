@@ -1,0 +1,18 @@
+﻿@model collegeManagement.Models.tbl_Student
+@{
+	ViewBag.Title = "AddNew";
+}
+
+<h2>New Student Form</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="panel panel-default">
+	<div class="panel panel-heading">Add New Student</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("AddNew", null, FormMethod.Post))
+		{
+			@Html.EditorForModel();
+		}
+	</div>
+</div>
+

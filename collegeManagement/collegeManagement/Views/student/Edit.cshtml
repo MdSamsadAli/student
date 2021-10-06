@@ -1,0 +1,18 @@
+﻿@model collegeManagement.Models.tbl_Student
+@{
+	ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h3>@ViewBag.Message</h3>
+<div class="panel panel-default">
+	<div class="panel panel-heading">Edit Student</div>
+	<div class="panel-body">
+		@using (Html.BeginForm("Edit", null, FormMethod.Post))
+		{
+			@Html.HiddenFor(model => model.id);
+			@Html.EditorForModel();
+		}
+	</div>
+</div>

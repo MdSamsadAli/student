@@ -1,0 +1,23 @@
+﻿@model collegeManagement.Models.tbl_Student
+@{
+	ViewBag.Title = "Delete";
+}
+
+<h2>Delete Form</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="panel panel-default">
+	<div class="panel panel-heading"></div>
+	<div class="panel-body">
+		@using(Html.BeginForm("DeleteConfirmed", null, FormMethod.Post))
+		{
+			@Html.HiddenFor(a => a.id);
+			<h2>Are You Sure to Delete???</h2>
+			@Html.DisplayForModel();
+			<div class="col-md-1">
+				<input type="submit" value="Delete" class="btn btn-danger" />
+			</div>
+		}
+	</div>
+</div>
+
